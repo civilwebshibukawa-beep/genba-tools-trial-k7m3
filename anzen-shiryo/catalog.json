@@ -1,0 +1,70 @@
+{
+  "categories": [
+    {"id": "ashiba", "name": "足場・墜落", "work": "足場の組立て・解体・足場上の作業", "hazards": ["墜落・転落", "飛来・落下"]},
+    {"id": "backhoe", "name": "バックホウ・挟まれ", "work": "バックホウ（ドラグ・ショベル）等の車両系建設機械を使う作業", "hazards": ["挟まれ・巻き込まれ", "激突され", "転倒"]},
+    {"id": "hosou", "name": "舗装・ローラー", "work": "アスファルト舗装・締固め（ローラー）作業", "hazards": ["轢かれ・挟まれ", "転落"]},
+    {"id": "kussaku", "name": "掘削・土止め", "work": "地山の掘削・溝掘削・土止め支保工の作業", "hazards": ["崩壊・倒壊（土砂）", "挟まれ（重機）"]},
+    {"id": "kaitai", "name": "解体・石綿", "work": "建築物・工作物の解体・改修作業", "hazards": ["墜落・転落", "崩壊・倒壊", "有害物（石綿・粉じん）"]},
+    {"id": "katawaku", "name": "型枠・支保工", "work": "型枠の組立て・型枠支保工の作業", "hazards": ["墜落・転落", "崩壊・倒壊"]},
+    {"id": "crane", "name": "クレーン・玉掛け", "work": "移動式クレーンによる揚重・玉掛け作業", "hazards": ["飛来・落下", "激突され", "転倒"]},
+    {"id": "tosou", "name": "塗装・防水", "work": "塗装・塗膜剥離・防水工事", "hazards": ["有害物（有機溶剤中毒）", "火災・爆発"]},
+    {"id": "yousetsu", "name": "溶接・溶断", "work": "アーク溶接・溶断・ガウジング作業", "hazards": ["高温（火傷・着衣着火）", "有害物（溶接ヒューム）"]},
+    {"id": "denki", "name": "電気・感電", "work": "仮設電気・電気工事・架空電線近接作業", "hazards": ["感電"]},
+    {"id": "tunnel", "name": "トンネル・粉じん", "work": "ずい道等建設工事（坑内作業）", "hazards": ["有害物（粉じん）"]},
+    {"id": "sanketsu", "name": "下水道・マンホール（酸欠）", "work": "下水道・マンホール等の酸素欠乏危険場所での作業", "hazards": ["酸素欠乏症", "硫化水素中毒"]},
+    {"id": "karibarai", "name": "草刈り・刈払機", "work": "刈払機・乗用草刈機による除草作業", "hazards": ["切れ・こすれ（刈刃）", "飛来・落下（飛石）", "転倒・転落"]}
+  ],
+  "docs": [
+    {"id": "mhlw-ashiba-kaisei", "title": "足場からの墜落防止措置が強化されます（改正労働安全衛生規則 令和5年10月1日から順次施行）", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/content/001108426.pdf", "license": "政府標準利用規約", "categories": ["ashiba"]},
+    {"id": "mhlw-ashiba-yori-anzen", "title": "足場を設置する際は、「より安全な措置」等に取り組みましょう", "org": "厚生労働省・都道府県労働局・労働基準監督署（滋賀労働局掲載）", "url": "https://jsite.mhlw.go.jp/shiga-roudoukyoku/var/rev0/0126/7372/201711141536.pdf", "license": "政府標準利用規約", "categories": ["ashiba"]},
+
+    {"id": "nayoro-sesshoku", "title": "車両系建設機械 接触災害に注意！", "org": "北海道労働局 名寄労働基準監督署", "url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/content/contents/001469976.pdf", "license": "政府標準利用規約", "categories": ["backhoe"]},
+    {"id": "mito-sesshoku", "title": "車両系建設機械の接触防止対策について ～ドラグ・ショベル等による災害が発生しています～", "org": "茨城労働局 水戸労働基準監督署", "url": "https://jsite.mhlw.go.jp/ibaraki-roudoukyoku/content/contents/anzen_kensetsu_leaf_digger05.pdf", "license": "政府標準利用規約", "categories": ["backhoe"]},
+    {"id": "mhlw-check-kikai", "title": "安全点検チェックリスト Ⅳ 建設機械等による災害の防止（車両系建設機械・油圧ショベル・杭打ち機・コンクリートポンプ車・ダンプトラック）", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/170315_5e.pdf", "page_range": [4, 8], "license": "政府標準利用規約", "categories": ["backhoe"]},
+    {"id": "mhlw-sharyou-kisei", "title": "労働安全衛生法令における車両系機械等の主な規制", "org": "厚生労働省 労働基準局安全衛生部安全課", "url": "https://www.mhlw.go.jp/content/11201250/001599313.pdf", "license": "政府標準利用規約", "categories": ["backhoe", "hosou"]},
+
+    {"id": "shiga-roller-keihou", "title": "STOP重大災害！緊急警報（道路舗装補修工事 ローラーによる轢かれ災害）", "org": "滋賀労働局", "url": "https://jsite.mhlw.go.jp/shiga-roudoukyoku/content/contents/002004692.pdf", "license": "政府標準利用規約", "categories": ["hosou"]},
+    {"id": "qsr-asphalt-jiko", "title": "事故報告（注意喚起）アスファルト舗装工 ローラオペレータの転落", "org": "国土交通省 九州地方整備局 港湾空港部 工事安全推進室", "url": "https://www.pa.qsr.mlit.go.jp/koujianzen/20260325%20(3).pdf", "license": "国土交通省ウェブサイトの利用規約", "categories": ["hosou"]},
+
+    {"id": "iwamizawa-dodome", "title": "土砂崩壊災害防止のために 土止め支保工を設置しましょう！", "org": "北海道労働局 岩見沢労働基準監督署", "url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/content/contents/001474472.pdf", "license": "政府標準利用規約", "categories": ["kussaku"]},
+    {"id": "mhlw-check-kussaku", "title": "安全点検チェックリスト Ⅲ 倒壊・崩壊の防止（掘削作業・土止め支保工）", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/170315_5e.pdf", "page_range": [1, 3], "license": "政府標準利用規約", "categories": ["kussaku"]},
+    {"id": "mhlw-dodome-senkou", "title": "土止め先行工法に関するガイドラインの策定について", "org": "厚生労働省 労働基準局長（基発第1217001号）", "url": "https://www.mlit.go.jp/tec/sekisan/sekou/pdf/tuutatu016.pdf", "license": "政府標準利用規約", "categories": ["kussaku"]},
+    {"id": "mhlw-shamen-guideline", "title": "斜面崩壊労働災害防止対策ガイドライン", "org": "厚生労働省（鹿児島労働局掲載）", "url": "https://jsite.mhlw.go.jp/kagoshima-roudoukyoku/var/rev0/0111/2973/2016-0210-1_02.pdf", "license": "政府標準利用規約", "categories": ["kussaku"]},
+
+    {"id": "chiba-kaitai", "title": "解体工事の労働災害防止のために", "org": "千葉労働局・労働基準監督署", "url": "https://jsite.mhlw.go.jp/chiba-roudoukyoku/content/contents/000971922.pdf", "license": "政府標準利用規約", "categories": ["kaitai"]},
+    {"id": "osaka-sekimen", "title": "建築物の解体作業などを行う事業者の皆さまへ（石綿ばく露防止）", "org": "厚生労働省・大阪労働局・労働基準監督署", "url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/content/contents/001842274.pdf", "license": "政府標準利用規約", "categories": ["kaitai"]},
+    {"id": "mhlw-sekimen-worker", "title": "石綿障害予防規則に基づく 解体・改修作業時のポイント（作業者向け）", "org": "厚生労働省（石綿総合情報ポータルサイト）", "url": "https://www.ishiwata.mhlw.go.jp/pdf/worker-materials.pdf", "license": "政府標準利用規約", "categories": ["kaitai"]},
+    {"id": "mhlw-sekimen-kousakubutsu", "title": "一部の工作物の解体・改修・メンテナンス等の工事にあたっては 工作物石綿事前調査者による調査が必要です（2026年1月1日義務化）", "org": "厚生労働省・都道府県労働局・労働基準監督署", "url": "https://www.ishiwata.mhlw.go.jp/pdf/leaflet-a4-r7.pdf", "license": "政府標準利用規約", "categories": ["kaitai"]},
+
+    {"id": "mhlw-katawaku-gaikokujin", "title": "外国人労働者に対する安全衛生教育教材（建設業）『型枠施工業務』安全衛生のポイント", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/content/11200000/000628882.pdf", "license": "政府標準利用規約", "categories": ["katawaku"]},
+    {"id": "hashimoto-setchitodoke", "title": "足場・型枠支保工の設置届は労働災害を未然に防ぐためのもの", "org": "和歌山労働局 橋本労働基準監督署", "url": "https://jsite.mhlw.go.jp/wakayama-roudoukyoku/content/contents/002510077.pdf", "license": "政府標準利用規約", "categories": ["katawaku"]},
+
+    {"id": "tokyo-crane-tentou", "title": "STOP!!移動式クレーンの転倒災害!!", "org": "東京労働局 労働基準部 安全課", "url": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/content/contents/001191045.pdf", "license": "政府標準利用規約", "categories": ["crane"]},
+    {"id": "hokkaido-crane", "title": "移動式クレーンの安全対策について", "org": "北海道労働局 室蘭労働基準監督署", "url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/var/rev0/0130/3965/20161124182947.pdf", "license": "政府標準利用規約", "categories": ["crane"]},
+    {"id": "kanagawa-tamakake", "title": "正しい玉掛け作業で安全確保！ ～玉掛け作業の安全に係るガイドラインについて～", "org": "神奈川労働局", "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/content/contents/001611026.pdf", "license": "政府標準利用規約", "categories": ["crane"]},
+    {"id": "mhlw-check-crane", "title": "安全点検チェックリスト Ⅴ クレーン等による災害の防止（移動式クレーン・ユニック・玉掛け作業・玉掛け用具）", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/170315_5e.pdf", "page_range": [9, 13], "license": "政府標準利用規約", "categories": ["crane"]},
+    {"id": "mhlw-tamakake-guideline", "title": "玉掛け作業の安全に係るガイドラインの策定について", "org": "厚生労働省（労働省労働基準局長 基発第96号）", "url": "https://www.mhlw.go.jp/content/11300000/001258803.pdf", "license": "政府標準利用規約", "categories": ["crane"]},
+
+    {"id": "mhlw-spray-tosou", "title": "塗装（スプレーによる屋外塗装）化学物質を取り扱う作業者のチェックリストと対策", "org": "厚生労働省（職場のあんぜんサイト）", "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/taisaku/SprayPainting_Outdoor201903.pdf", "license": "政府標準利用規約", "categories": ["tosou"]},
+    {"id": "mhlw-yuuki-tadashiku", "title": "有機溶剤を正しく使いましょう", "org": "厚生労働省・都道府県労働局・労働基準監督署", "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/120815-01.pdf", "license": "政府標準利用規約", "categories": ["tosou"]},
+    {"id": "mhlw-hakurizai", "title": "剥離剤を使用した塗膜の剥離作業における労働災害防止について", "org": "厚生労働省 労働基準局安全衛生部 化学物質対策課（愛知労働局掲載）", "url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/content/contents/001154071.pdf", "license": "政府標準利用規約", "categories": ["tosou"]},
+    {"id": "mhlw-yuuki-oukyuu", "title": "有機溶剤による中毒が発生したときの応急措置について", "org": "厚生労働省 労働基準局安全衛生部 化学物質対策課", "url": "https://www.mhlw.go.jp/content/11201000/001395981.pdf", "license": "政府標準利用規約", "categories": ["tosou"]},
+
+    {"id": "onomichi-sputter", "title": "溶接スパッタ（火花）による着衣着火のヤケドが多発しています！！", "org": "広島労働局 尾道労働基準監督署", "url": "https://jsite.mhlw.go.jp/hiroshima-roudoukyoku/content/contents/002767995.pdf", "license": "政府標準利用規約", "categories": ["yousetsu"]},
+    {"id": "mhlw-fume-okunai", "title": "金属アーク溶接等作業を継続して屋内作業場で行う皆さまへ 金属アーク溶接等作業について健康障害防止措置が義務付けられます", "org": "厚生労働省・都道府県労働局・労働基準監督署", "url": "https://www.mhlw.go.jp/content/11300000/000746531.pdf", "license": "政府標準利用規約", "categories": ["yousetsu"]},
+    {"id": "kanagawa-fume", "title": "金属アーク溶接等作業に従事する皆様へ 「溶接ヒューム」が特定化学物質になります！", "org": "神奈川労働局", "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/content/contents/000694679.pdf", "license": "政府標準利用規約", "categories": ["yousetsu"]},
+
+    {"id": "mhlw-check-kanden", "title": "安全点検チェックリスト Ⅵ 感電災害の防止（仮設照明・架空電線近接作業）", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/170315_5e.pdf", "page_range": [14, 15], "license": "政府標準利用規約", "categories": ["denki"]},
+    {"id": "ise-kanden", "title": "感電災害を防ぎましょう！（電気使用安全月間）", "org": "三重労働局 伊勢労働基準監督署", "url": "https://jsite.mhlw.go.jp/mie-roudoukyoku/content/contents/000954785.pdf", "page_range": [3, 3], "license": "政府標準利用規約", "categories": ["denki"]},
+
+    {"id": "mhlw-zuidou-funjin", "title": "ずい道等建設工事における粉じん対策に関するガイドラインの概要", "org": "厚生労働省", "url": "https://www.mhlw.go.jp/content/guideline_zuidou_r2kaitei.pdf", "license": "政府標準利用規約", "categories": ["tunnel"]},
+
+    {"id": "akita-sanketsu", "title": "下水道工事等における酸素欠乏症・硫化水素中毒の防止対策", "org": "秋田労働局", "url": "https://jsite.mhlw.go.jp/akita-roudoukyoku/content/contents/002720025.pdf", "license": "政府標準利用規約", "categories": ["sanketsu"]},
+    {"id": "tochigi-sanketsu-check", "title": "酸素欠乏症・硫化水素中毒防止 チェックリスト", "org": "栃木労働局", "url": "https://jsite.mhlw.go.jp/tochigi-roudoukyoku/content/contents/002343741.pdf", "license": "政府標準利用規約", "categories": ["sanketsu"]},
+    {"id": "nagaoka-sanketsu", "title": "酸欠による労働災害を防止しましょう", "org": "厚生労働省 新潟労働局 長岡労働基準監督署", "url": "https://jsite.mhlw.go.jp/niigata-roudoukyoku/content/contents/2_sanketubousi.pdf", "license": "政府標準利用規約", "categories": ["sanketsu"]},
+
+    {"id": "maff-karibarai", "title": "刈払機の適正な使用を！", "org": "農林水産省", "url": "https://www.maff.go.jp/j/seisan/sien/sizai/s_kikaika/anzen/pdf/kusakari2.pdf", "license": "政府標準利用規約", "categories": ["karibarai"]},
+    {"id": "hokkaido-jouyou-kusakari", "title": "乗用草刈機等の使用に係る安全対策", "org": "北海道労働局・労働基準監督署", "url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/content/contents/001594540.pdf", "license": "政府標準利用規約", "categories": ["karibarai"]},
+    {"id": "rinya-kickback", "title": "災害事例（下刈り）刈払機のキックバック", "org": "林野庁", "url": "https://www.rinya.maff.go.jp/j/routai/anzen/attach/pdf/index-14.pdf", "license": "政府標準利用規約", "categories": ["karibarai"]}
+  ]
+}

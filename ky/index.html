@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安全指示・KYメーカー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+<style>
+.paper h4{margin:1.6em 0 .6em;font-size:15px;color:var(--teal)}
+.paper h4:first-of-type{margin-top:0}
+.law{font-size:12px;color:var(--sub);white-space:nowrap}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <div class="bg" aria-hidden="true"><img src="../assets/silhouette.png" alt=""></div>
+  <div class="top"><a href="../"><img class="logo" src="../assets/logo.png" alt="Civilweb"></a><a class="back" href="../">← ツール一覧へ</a></div>
+  <span class="catch">＼ 朝礼・KY活動・打合せの準備に ／</span>
+  <h1>安全指示・KYメーカー</h1>
+  <p>作業内容を入れるだけで、危険ポイントと安全指示をまとめます</p>
+</div></header>
+
+<main>
+  <div class="mock">画面イメージ(たたき)です。「作成する」を押すと、出力のサンプルが表示されます。</div>
+
+  <section>
+    <h2><span class="no">1</span>作りたいものを選ぶ</h2>
+    <p class="lead">1つ選んでください。</p>
+    <div class="cards">
+      <button class="card" aria-pressed="true"><b>安全指示事項</b><span>下請への指示・安全衛生打合せ簿に</span></button>
+      <button class="card" aria-pressed="false"><b>KY活動のポイント</b><span>危険予知(KY)の話し合いのたたき台</span></button>
+      <button class="card" aria-pressed="false"><b>職長会のレジュメ</b><span>安全衛生協議会で共有する連絡事項</span></button>
+      <button class="card" aria-pressed="false"><b>外国人作業員向けフレーズ</b><span>やさしい日本語+母国語の短い指示</span></button>
+      <button class="card" aria-pressed="false"><b>熱中症対策ルール</b><span>WBGTの測り方と休憩の目安</span></button>
+      <button class="card" aria-pressed="false"><b>簡易作業手順書</b><span>新しい作業を始めるときの手順</span></button>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">2</span>作業の内容を入れる</h2>
+    <p class="lead">具体的に書くほど、現場に合った内容になります。</p>
+    <div class="form">
+      <label class="wide">作業内容<input type="text" value="バックホウ(0.45㎥)による道路側溝の床掘り・掘削土のダンプ積込み"></label>
+      <label>現在の工程<input type="text" value="側溝布設前の掘削(延長40m)"></label>
+      <label>作業人数<input type="text" value="オペレーター1名・手元作業員2名"></label>
+    </div>
+    <div class="sub-label">現場の状況</div>
+    <div class="chips">
+      <button class="chip" aria-pressed="false">交通規制あり</button>
+      <button class="chip" aria-pressed="true">雨上がり</button>
+      <button class="chip" aria-pressed="false">強風</button>
+      <button class="chip" aria-pressed="false">高温・猛暑</button>
+      <button class="chip" aria-pressed="false">夜間作業</button>
+      <button class="chip" aria-pressed="false">地下埋設物あり</button>
+      <button class="chip" aria-pressed="false">混在作業あり</button>
+    </div>
+    <div class="sub-label">言語(「外国人作業員向けフレーズ」を選んだとき。やさしい日本語は必ず付きます)</div>
+    <div class="chips">
+      <button class="chip" aria-pressed="true">ベトナム語</button>
+      <button class="chip" aria-pressed="false">英語</button>
+      <button class="chip" aria-pressed="false">インドネシア語</button>
+      <button class="chip" aria-pressed="false">フィリピン語</button>
+      <button class="chip" aria-pressed="false">ミャンマー語</button>
+      <button class="chip" aria-pressed="false">中国語</button>
+    </div>
+  </section>
+
+  <section>
+    <button class="go" id="go">作成する</button>
+  </section>
+
+  <section id="result">
+    <div class="result-head"><h2><span class="no">✓</span>作成した内容</h2><span class="tag">出力サンプル</span></div>
+    <div class="paper">
+      <div data-sample="shiji">
+      <h4>■ 安全指示事項(バックホウによる床掘り・積込み)</h4>
+      <table class="out">
+        <tr><th>危険ポイント</th><th>安全指示</th><th>関係法令</th></tr>
+        <tr><td>旋回時に手元作業員がバケットやカウンターウエイトに接触する</td><td>旋回範囲をカラーコーンとバーで区画し、立入禁止とする。立ち入る必要があるときは、合図を決めてオペレーターに知らせ、旋回を止めてから入る</td><td class="law">安衛則第158条</td></tr>
+        <tr><td>雨上がりで掘削面が崩れ、溝内の作業員が埋まる</td><td>作業前に掘削面のひび割れ・湧水を点検する。深さ1.5m以上は土止めを設け、溝内に入るのは土止め設置後とする</td><td class="law">安衛則第361条<br>土止め先行工法<br>ガイドライン</td></tr>
+        <tr><td>ダンプ積込み時に、後退してきたダンプと作業員が接触する</td><td>誘導員を1名配置し、ダンプの後退は誘導員の合図でのみ行う</td><td class="law">安衛則第158条</td></tr>
+        <tr><td>規制帯の中に一般車両が進入する</td><td>交通誘導員と無線で連絡を取り、重機の作業位置を規制帯の内側に限定する</td><td class="law">—</td></tr>
+        <tr><td>運転席を離れた間にバックホウが動き出す</td><td>運転席を離れるときは、バケットを地面に下ろし、エンジンを止めてブレーキをかける</td><td class="law">安衛則第160条</td></tr>
+      </table>
+
+      </div>
+      <div data-sample="phrase" hidden>
+      <h4>■ 外国人作業員向けフレーズ(やさしい日本語・ベトナム語)</h4>
+      <table class="out">
+        <tr><th>やさしい日本語</th><th>ベトナム語(Tiếng Việt)</th></tr>
+        <tr><td>ショベルの まわりに 入らないで ください。</td><td>Không được vào khu vực xung quanh máy xúc.</td></tr>
+        <tr><td>入る ときは、オペレーターに 手を あげて ください。</td><td>Khi muốn vào, hãy giơ tay ra hiệu cho người vận hành.</td></tr>
+        <tr><td>みぞの かべが くずれます。きけんです。</td><td>Thành hố đào có thể bị sập. Rất nguy hiểm.</td></tr>
+        <tr><td>ダンプの うしろに 立たないで ください。</td><td>Không được đứng phía sau xe ben (xe tải tự đổ).</td></tr>
+        <tr><td>ヘルメットの あごひもを しめて ください。</td><td>Hãy cài chặt quai mũ bảo hộ.</td></tr>
+      </table>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" data-act="print"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><span>印刷</span></button>
+      <button class="btn" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>コピー</span></button>
+      <button class="btn" data-act="mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span>Excelでダウンロード</span></button>
+    </div>
+  </section>
+
+  <p class="note">※内容はAIが作成したものです。現場の状況や作業手順書と照らし合わせ、職長・安全担当者が確認してからお使いください。外国語のフレーズは、できれば母国語の分かる方にも確認してもらってください。</p>
+</main>
+<script src="../assets/mock.js"></script>
+<script>
+// 選んだ「作りたいもの」に合わせて出力サンプルを切り替える(画面イメージ用)
+document.getElementById("go").addEventListener("click", () => {
+  const picked = document.querySelector('.cards [aria-pressed="true"] b')?.textContent || "";
+  const phrase = picked.includes("外国人");
+  document.querySelector('[data-sample="shiji"]').hidden = phrase;
+  document.querySelector('[data-sample="phrase"]').hidden = !phrase;
+});
+</script>
+</body>
+</html>

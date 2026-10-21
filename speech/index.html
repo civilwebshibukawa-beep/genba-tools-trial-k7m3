@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安全スピーチ原稿メーカー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<header><div class="in">
+  <div class="bg" aria-hidden="true"><img src="../assets/silhouette.png" alt=""></div>
+  <div class="top"><a href="../"><img class="logo" src="../assets/logo.png" alt="Civilweb"></a><a class="back" href="../">← ツール一覧へ</a></div>
+  <span class="catch">＼ 月例安全大会の準備に ／</span>
+  <h1>安全スピーチ原稿メーカー</h1>
+  <p>テーマと時間を選ぶだけで、ヒヤリハット事例入りのスピーチ原稿ができます</p>
+</div></header>
+
+<main>
+  <div class="mock">画面イメージ(たたき)です。「原稿を作成する」を押すと、出力のサンプルが表示されます。</div>
+
+  <section>
+    <h2><span class="no">1</span>テーマを選ぶ</h2>
+    <p class="lead">一覧にないテーマは、下の欄に自由に入力できます。</p>
+    <div class="chips">
+      <button class="chip" aria-pressed="true">墜落・転落</button>
+      <button class="chip" aria-pressed="false">重機との接触</button>
+      <button class="chip" aria-pressed="false">熱中症</button>
+      <button class="chip" aria-pressed="false">飛来・落下</button>
+      <button class="chip" aria-pressed="false">交通災害</button>
+      <button class="chip" aria-pressed="false">感電</button>
+      <button class="chip" aria-pressed="false">酸欠</button>
+      <button class="chip" aria-pressed="false">転倒・つまずき</button>
+      <button class="chip" aria-pressed="false">整理整頓(4S)</button>
+      <button class="chip" aria-pressed="false">指差し呼称</button>
+      <button class="chip" aria-pressed="false">年末年始の安全</button>
+    </div>
+    <label style="margin-top:14px">自由入力(任意)<input type="text" placeholder="例:雨天後の法面作業での滑落"></label>
+  </section>
+
+  <section>
+    <h2><span class="no">2</span>時期と長さを選ぶ</h2>
+    <p class="lead">時期に合わせた注意点(凍結・日没の早まり・熱中症など)が原稿に盛り込まれます。</p>
+    <div class="form">
+      <label>話す時期<select><option>1月</option><option>2月</option><option>3月</option><option>4月</option><option>5月</option><option>6月</option><option>7月</option><option>8月</option><option>9月</option><option>10月</option><option selected>11月</option><option>12月</option></select></label>
+      <label>話す人<select><option selected>現場代理人</option><option>所長</option><option>安全担当者</option><option>職長</option></select></label>
+      <label>聞く人<select><option selected>作業員全員(新人〜ベテラン)</option><option>新規入場者</option><option>協力会社の職長</option></select></label>
+    </div>
+    <div class="sub-label">話す時間</div>
+    <div class="chips">
+      <button class="chip" aria-pressed="false">1分(約400字)</button>
+      <button class="chip" aria-pressed="true">3分(約1,100字)</button>
+      <button class="chip" aria-pressed="false">5分(約1,800字)</button>
+    </div>
+  </section>
+
+  <section>
+    <button class="go" id="go">原稿を作成する</button>
+  </section>
+
+  <section id="result">
+    <div class="result-head"><h2><span class="no">✓</span>作成した原稿</h2><span class="tag">出力サンプル</span></div>
+    <div class="paper">
+      <h3>「慣れた足場」こそ、一歩目を疑おう</h3>
+      <p>皆さん、おはようございます。11月に入り、朝晩の冷え込みがぐっと厳しくなってきました。日の出も遅くなり、作業を始める時間帯はまだ薄暗く、足場の踏板には朝露や霜が残っていることもあります。今日は、この時期に特に気をつけたい「墜落・転落」についてお話しします。</p>
+      <p>ある現場での話です。朝一番、足場の3段目で型枠の確認をしようとした作業員が、いつものように踏板に足をかけました。毎日上り下りしている、慣れた足場です。ところがその日は前夜の雨で踏板が濡れていて、しかも端部の踏板が1枚、わずかにずれていました。足を乗せた瞬間に滑り、とっさに手すりをつかんで事なきを得ましたが、もし手すりが外されていたら、もし安全帯をかけていなかったら、と思うと今でもぞっとします。原因は「いつもと同じだろう」という思い込みでした。</p>
+      <p>私の現場でも以前、朝の点検で踏板の固定が外れているのを見つけたことがあります。前日の夕方、資材を上げるために一時的に外したものが、そのままになっていたのです。</p>
+      <p>そこで皆さんに、今日から二つのことをお願いします。一つ目は、足場に上がる前に、踏板と手すりを「目で見て、手で触って」確かめること。とくに朝一番と雨の翌日は必ずです。二つ目は、作業のために手すりや踏板を外したときは、その日のうちに必ず元に戻し、職長に報告すること。外した人と戻す人が違うと、事故の種が残ります。</p>
+      <p>慣れた場所ほど、一歩目を疑う。この気持ちを持って、今日も一日、全員そろって無事に帰りましょう。ご安全に!</p>
+      <div class="meta">約3分・約1,100字 ※この欄はサンプルのため実際の文字数より短く表示しています</div>
+    </div>
+    <div class="actions">
+      <button class="btn" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>コピー</span></button>
+      <button class="btn" data-act="print"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><span>印刷</span></button>
+      <button class="btn ghost" data-act="mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg><span>別の原稿にする</span></button>
+    </div>
+  </section>
+
+  <p class="note">※原稿はAIが作成した文章です。現場の状況に合わせて確認・修正してからお使いください。</p>
+</main>
+<script src="../assets/mock.js"></script>
+</body>
+</html>

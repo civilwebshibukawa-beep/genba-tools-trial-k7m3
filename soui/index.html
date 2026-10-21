@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>創意工夫・加点資料メーカー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+<style>
+.sheet th{width:8em}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photo{border:2px dashed var(--cool);border-radius:6px;height:120px;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:13px;background:#fff}
+.upload{border:2px dashed var(--cool);border-radius:8px;padding:18px;text-align:center;color:var(--sub);font-size:13px;margin-top:4px;background:var(--bg)}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <div class="bg" aria-hidden="true"><img src="../assets/silhouette.png" alt=""></div>
+  <div class="top"><a href="../"><img class="logo" src="../assets/logo.png" alt="Civilweb"></a><a class="back" href="../">← ツール一覧へ</a></div>
+  <span class="catch">＼ 工事成績の加点対策に ／</span>
+  <h1>創意工夫・加点資料メーカー</h1>
+  <p>現場で工夫したことを入れるだけで、提出用の資料のたたき台ができます</p>
+</div></header>
+
+<main>
+  <div class="mock">画面イメージ(たたき)です。「資料を作成する」を押すと、出力のサンプルが表示されます。</div>
+
+  <section>
+    <h2><span class="no">1</span>工種と区分を選ぶ</h2>
+    <p class="lead">工夫した内容に一番近い区分を選んでください。</p>
+    <div class="form">
+      <label>工種<select><option>道路改良工</option><option selected>舗装工</option><option>河川・護岸工</option><option>橋梁工</option><option>トンネル工</option><option>下水道工</option><option>砂防・法面工</option><option>その他</option></select></label>
+    </div>
+    <div class="sub-label">区分</div>
+    <div class="chips">
+      <button class="chip" aria-pressed="false">施工</button>
+      <button class="chip" aria-pressed="false">品質</button>
+      <button class="chip" aria-pressed="true">安全衛生</button>
+      <button class="chip" aria-pressed="false">ICT・新技術</button>
+      <button class="chip" aria-pressed="false">環境への配慮</button>
+      <button class="chip" aria-pressed="false">地域への貢献</button>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">2</span>工夫した内容を入れる</h2>
+    <p class="lead">箇条書きやメモ書きで大丈夫です。文章はAIが整えます。</p>
+    <div class="form">
+      <label class="wide">何に困っていたか(きっかけ)<textarea>夜間の舗装作業で、ローラーの後進時に作業員との接触の危険があった。ライトだけでは後ろが見えにくい。</textarea></label>
+      <label class="wide">どんな工夫をしたか<textarea>ローラーの後部に人感センサー付きの警報装置を取り付けた。作業員のヘルメットに反射材とLEDライトを付けた。</textarea></label>
+      <label class="wide">どんな効果があったか<textarea>後進時の接触ヒヤリがゼロになった。作業員から「安心して作業できる」との声。</textarea></label>
+      <div class="wide"><span style="font-size:13px;font-weight:500">写真(任意)</span><div class="upload">ここに写真をドラッグ、またはクリックして選択<br>(施工前・施工中の写真を入れると、資料の写真欄に配置されます)</div></div>
+    </div>
+  </section>
+
+  <section>
+    <button class="go" id="go">資料を作成する</button>
+  </section>
+
+  <section id="result">
+    <div class="result-head"><h2><span class="no">✓</span>作成した資料</h2><span class="tag">出力サンプル</span></div>
+    <div class="paper">
+      <h3>創意工夫・社会性等に関する実施状況</h3>
+      <table class="out sheet">
+        <tr><th>工種</th><td>舗装工</td></tr>
+        <tr><th>区分</th><td>安全衛生</td></tr>
+        <tr><th>タイトル</th><td>夜間舗装作業における締固め機械の後方接触防止対策</td></tr>
+        <tr><th>背景・課題</th><td>夜間の舗装作業では照明が限られ、ローラーの後進時にオペレーターから後方の作業員が見えにくい。締固め作業中は作業員が機械の近くで作業するため、後進時の接触災害が懸念された。</td></tr>
+        <tr><th>工夫の内容</th><td>①ローラーの後部に人感センサー付き警報装置を設置し、後方に人を検知するとブザーと回転灯で運転者と作業員の双方に知らせるようにした。<br>②作業員のヘルメットに反射材とLEDライトを取り付け、暗い中でも位置が分かるようにした。</td></tr>
+        <tr><th>効果</th><td>工事期間中、後進時の接触に関するヒヤリハットは発生しなかった。作業員からも「安心して作業できる」との声があり、夜間作業における安全意識の向上につながった。</td></tr>
+        <tr><th>写真</th><td><div class="photos"><div class="photo">施工前の写真</div><div class="photo">工夫後の写真</div></div></td></tr>
+      </table>
+    </div>
+    <div class="actions">
+      <button class="btn" data-act="mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span>Wordでダウンロード</span></button>
+      <button class="btn" data-act="print"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><span>印刷</span></button>
+      <button class="btn" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>コピー</span></button>
+    </div>
+  </section>
+
+  <p class="note">※資料はAIが作成したたたき台です。発注者の指定様式に合わせて、内容を確認・修正してから提出してください。</p>
+</main>
+<script src="../assets/mock.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>近隣対応文書メーカー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+<style>
+.letter .date,.letter .from{text-align:right}
+.letter .to{margin-bottom:1.4em}
+.letter .info{width:100%;border-collapse:collapse;margin:1em 0 1.4em;font-size:14px;background:#fff}
+.letter .info th,.letter .info td{border:1px solid var(--cool);padding:6px 10px;text-align:left}
+.letter .info th{background:var(--pale);width:7.5em;white-space:nowrap}
+.letter .kei{text-align:center;margin:1.2em 0}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <div class="bg" aria-hidden="true"><img src="../assets/silhouette.png" alt=""></div>
+  <div class="top"><a href="../"><img class="logo" src="../assets/logo.png" alt="Civilweb"></a><a class="back" href="../">← ツール一覧へ</a></div>
+  <span class="catch">＼ 近隣の皆さまへのお知らせに ／</span>
+  <h1>近隣対応文書メーカー</h1>
+  <p>文書の種類を選んで工事の情報を入れるだけで、配布できる文書ができます</p>
+</div></header>
+
+<main>
+  <div class="mock">画面イメージ(たたき)です。「文書を作成する」を押すと、出力のサンプルが表示されます。</div>
+
+  <section>
+    <h2><span class="no">1</span>文書の種類を選ぶ</h2>
+    <p class="lead">配布する相手や場面に合わせて選んでください。</p>
+    <div class="cards">
+      <button class="card" aria-pressed="true"><b>着工のご挨拶</b><span>工事開始前に近隣へ配布する挨拶状</span></button>
+      <button class="card" aria-pressed="false"><b>近隣説明会のご案内</b><span>大規模工事の着工前の説明会</span></button>
+      <button class="card" aria-pressed="false"><b>片側交互通行のお知らせ</b><span>周辺住民・通行車両向けチラシ</span></button>
+      <button class="card" aria-pressed="false"><b>通行止め・迂回路のお知らせ</b><span>迂回ルートの案内付きチラシ</span></button>
+      <button class="card" aria-pressed="false"><b>騒音・振動のお知らせ</b><span>重機作業などの事前のお知らせ</span></button>
+      <button class="card" aria-pressed="false"><b>騒音のお詫び</b><span>苦情を受けたときの初期対応文</span></button>
+      <button class="card" aria-pressed="false"><b>粉じん対策のお知らせ</b><span>追加の養生・散水対策の説明</span></button>
+      <button class="card" aria-pressed="false"><b>工事完了のご挨拶</b><span>工事終了時のお礼</span></button>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="no">2</span>工事の情報を入れる</h2>
+    <p class="lead">入力した内容が文書に反映されます。わからない項目は空欄でもかまいません。</p>
+    <div class="form">
+      <label class="wide">工事名<input type="text" value="市道〇〇線道路改良工事"></label>
+      <label class="wide">工事場所<input type="text" value="〇〇市〇〇町1丁目〜2丁目地内"></label>
+      <label>工事期間(開始)<input type="date" value="2026-12-01"></label>
+      <label>工事期間(終了)<input type="date" value="2027-03-19"></label>
+      <label>作業時間<input type="text" value="8:00〜17:00(日曜・祝日は休工)"></label>
+      <label>発注者<input type="text" value="〇〇市 建設部 道路課"></label>
+      <label>施工会社<input type="text" value="〇〇建設株式会社"></label>
+      <label>現場責任者・連絡先<input type="text" value="現場代理人 〇〇 〇〇 / 090-0000-0000"></label>
+      <label class="wide">特に伝えたいこと(任意)<textarea placeholder="例:12月中旬に夜間作業が3日間あります">工事車両の出入りがあるため、朝夕は誘導員を配置します。</textarea></label>
+    </div>
+  </section>
+
+  <section>
+    <button class="go" id="go">文書を作成する</button>
+  </section>
+
+  <section id="result">
+    <div class="result-head"><h2><span class="no">✓</span>作成した文書</h2><span class="tag">出力サンプル</span></div>
+    <div class="paper letter">
+      <div class="date">令和8年11月20日</div>
+      <div class="to">近隣にお住まいの皆さまへ</div>
+      <h3>工事着工のご挨拶</h3>
+      <p>拝啓 晩秋の候、皆さまにおかれましてはますますご清祥のこととお喜び申し上げます。</p>
+      <p>このたび、下記のとおり工事を施工させていただくこととなりました。工事期間中は、騒音や振動、工事車両の通行などにより、皆さまには大変ご迷惑をおかけいたしますが、安全第一に努め、できる限りご迷惑をおかけしないよう細心の注意を払って施工してまいります。何とぞご理解とご協力を賜りますよう、よろしくお願い申し上げます。</p>
+      <p>なお、工事車両の出入りがあるため、朝夕は誘導員を配置いたします。お気づきの点がございましたら、下記の連絡先までお気軽にお申し付けください。</p>
+      <p style="text-align:right">敬具</p>
+      <div class="kei">記</div>
+      <table class="info">
+        <tr><th>工事名</th><td>市道〇〇線道路改良工事</td></tr>
+        <tr><th>工事場所</th><td>〇〇市〇〇町1丁目〜2丁目地内</td></tr>
+        <tr><th>工事期間</th><td>令和8年12月1日 〜 令和9年3月19日</td></tr>
+        <tr><th>作業時間</th><td>8:00〜17:00(日曜・祝日は休工)</td></tr>
+        <tr><th>発注者</th><td>〇〇市 建設部 道路課</td></tr>
+        <tr><th>連絡先</th><td>〇〇建設株式会社 現場代理人 〇〇 〇〇(090-0000-0000)</td></tr>
+      </table>
+      <div class="from">〇〇建設株式会社</div>
+    </div>
+    <div class="actions">
+      <button class="btn" data-act="print"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg><span>印刷</span></button>
+      <button class="btn" data-act="copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>コピー</span></button>
+      <button class="btn" data-act="mock"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg><span>Wordでダウンロード</span></button>
+    </div>
+  </section>
+
+  <p class="note">※文書はAIが作成した文章です。発注者の指定様式がある場合は、そちらを優先してください。</p>
+</main>
+<script src="../assets/mock.js"></script>
+</body>
+</html>

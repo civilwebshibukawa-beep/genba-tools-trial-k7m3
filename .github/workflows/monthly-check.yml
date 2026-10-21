@@ -1,0 +1,26 @@
+# 毎月1日の朝9時(日本時間)に、収録資料の元ページを確認して差し替える
+name: 収録資料の月次チェック
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install requests pypdf pymupdf
+      - run: python build.py
+        working-directory: anzen-shiryo
+      - name: 変更があればコミット
+        run: |
+          git config user.name "safety-docs-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "収録資料の月次チェック $(date +%Y-%m-%d)"
+          git push

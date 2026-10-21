@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>安全教育資料メーカー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<style>
+:root{
+  --ink:#17345F; --teal:#007884; --cyan:#10AFC2; --light:#33C1CF; --sub:#7F8FA6;
+  --pale:#EAF8FA; --border:#E5EEF1; --cool:#CAD9DE; --bg:#FBFDFE; --card:#FFFFFF;
+  --gold:#A97C43; --palegold:#F6EFE5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--cyan) 0%,var(--teal) 100%) fixed;background-color:var(--teal);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;font-size:15px;min-height:100vh}
+/* 建設現場のシルエット(ヒーロー下部) */
+section{box-shadow:0 6px 20px rgba(0,60,70,.18)}
+/* 建設現場のシルエット(ヘッダー右側に小さく) */
+.bg{position:absolute;right:0;bottom:-22px;width:min(440px,44vw);pointer-events:none;opacity:.32}
+.bg img{width:100%;height:auto;display:block}
+header{background:#fff;border-top:5px solid var(--cyan);padding:18px 16px 22px}
+header .in{max-width:880px;margin:0 auto;position:relative}
+header .logo{display:block;height:30px;width:auto}
+header .top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+header .back{font-size:13px;font-weight:500;color:var(--teal);text-decoration:none;white-space:nowrap}
+header .back:hover{text-decoration:underline}
+header .catch{display:inline-block;margin:0 0 4px;color:var(--teal);font-weight:700;font-size:14px;letter-spacing:.06em}
+header h1{margin:0;font-size:28px;letter-spacing:.05em;color:var(--ink);line-height:1.4}
+header p{margin:4px 0 0;font-size:13px;color:var(--sub)}
+main{max-width:880px;margin:0 auto;padding:24px 16px 64px}
+section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:18px}
+h2{margin:0 0 4px;font-size:17px;display:flex;align-items:center;gap:10px}
+h2 .no{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--cyan);color:#fff;font-size:13px;align-items:center;justify-content:center;flex:none}
+.lead{margin:0 0 14px;color:var(--sub);font-size:13px}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.cat{border:2px solid var(--border);border-radius:8px;padding:12px 14px;cursor:pointer;background:#fff;text-align:left;font:inherit;color:inherit}
+.cat:hover{border-color:var(--light)}
+.cat[aria-pressed="true"]{border-color:var(--teal);background:var(--pale)}
+.cat b{display:block;font-size:15px}
+.cat span{display:block;font-size:12px;color:var(--sub)}
+.doc{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--border);align-items:flex-start}
+.doc:first-child{border-top:none}
+.doc input{margin-top:5px;width:18px;height:18px;accent-color:var(--teal);flex:none}
+.doc .t{font-weight:500}
+.doc .m{font-size:12px;color:var(--sub)}
+.doc .m a{color:var(--teal)}
+.badge{display:inline-block;font-size:11px;padding:0 6px;border-radius:4px;background:var(--palegold);color:var(--gold);margin-left:6px}
+.empty{color:var(--sub);font-size:13px;margin:0}
+.sum{margin-top:12px;padding:10px 12px;background:var(--pale);border-radius:6px;font-size:13px}
+.sum b{color:var(--teal);font-size:18px}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+label{font-size:13px;font-weight:500;display:block}
+input[type=text],input[type=month]{width:100%;margin-top:4px;padding:8px 10px;border:1px solid var(--cool);border-radius:6px;font:inherit;color:var(--ink);background:#fff}
+.go{display:block;width:100%;padding:14px;border:none;border-radius:8px;background:var(--teal);color:#fff;font:inherit;font-weight:700;font-size:16px;cursor:pointer}
+.go:disabled{background:var(--cool);cursor:not-allowed}
+.status{margin-top:12px;font-size:13px;color:var(--sub)}
+.dl{display:none;margin-top:14px}
+.dl a{display:block;padding:14px;margin:10px 0 16px;border:3px solid var(--cyan);border-radius:10px;background:#fff;color:var(--teal);text-decoration:none;text-align:center;box-shadow:0 6px 0 var(--teal),0 10px 22px rgba(0,60,70,.28);transition:transform .08s,box-shadow .08s}
+.dl a:hover{background:var(--pale)}
+.dl a:active{transform:translateY(5px);box-shadow:0 1px 0 var(--teal),0 3px 8px rgba(0,60,70,.25)}
+.dl a b{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:18px;font-weight:700}
+.dl a svg{width:24px;height:24px;flex:none}
+.dl a small{display:block;margin-top:2px;font-size:12px;color:var(--sub)}
+.status{text-align:center}
+.note{font-size:12px;color:rgba(255,255,255,.88);margin-top:24px}
+@media (max-width:640px){.bg{display:none}}
+@media (max-width:480px){header h1{font-size:23px}header .logo{height:24px}section{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+<div class="in">
+  <div class="bg" aria-hidden="true"><img src="silhouette.png" alt=""></div>
+  <div class="top"><a href="../"><img class="logo" src="logo.png" alt="Civilweb"></a><a class="back" href="../">← ツール一覧へ</a></div>
+  <span class="catch">＼ 毎月の安全教育資料づくりに ／</span>
+  <h1>安全教育資料メーカー</h1>
+  <p>工種を選ぶだけで、公的機関の安全資料を1冊のPDFにまとめます</p>
+</div></header>
+<main>
+  <section>
+    <h2><span class="no">1</span>工種・作業を選ぶ</h2>
+    <p class="lead">複数選べます。</p>
+    <div class="cats" id="cats"></div>
+  </section>
+
+  <section>
+    <h2><span class="no">2</span>収録する資料を確認する</h2>
+    <p class="lead">厚生労働省・労働局・国土交通省などの公開資料です。不要なものはチェックを外してください。</p>
+    <div id="docs"><p class="empty">工種を選ぶと資料が表示されます。</p></div>
+    <div class="sum" id="sum" hidden></div>
+  </section>
+
+  <section>
+    <h2><span class="no">3</span>表紙情報を入れる(任意)</h2>
+    <p class="lead">PDFの表紙に記載されます。空欄のままでも作成できます。</p>
+    <div class="form">
+      <label>教育月<input type="month" id="month"></label>
+      <label>工事名<input type="text" id="koji" placeholder="例:〇〇線道路改良工事"></label>
+      <label>会社名<input type="text" id="company" placeholder="例:〇〇建設株式会社"></label>
+    </div>
+  </section>
+
+  <section>
+    <button class="go" id="go" disabled>安全教育資料を作成する</button>
+    <div class="status" id="status"></div>
+    <div class="dl" id="dl"></div>
+  </section>
+
+  <p class="note" id="note"></p>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+let DATA = null;
+const selectedCats = new Set();
+const unchecked = new Set();
+const urls = [];
+
+function esc(s){return String(s ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function docsFor(){
+  return DATA.docs.filter(d => d.categories.some(c => selectedCats.has(c)));
+}
+function chosen(){ return docsFor().filter(d => !unchecked.has(d.id)); }
+
+function renderCats(){
+  $("#cats").innerHTML = DATA.categories.map(c =>
+    `<button class="cat" data-id="${c.id}" aria-pressed="${selectedCats.has(c.id)}">
+      <b>${esc(c.name)}</b><span>${esc(c.hazards.join("/"))}</span></button>`).join("");
+}
+
+function renderDocs(){
+  const list = docsFor();
+  if(!list.length){
+    $("#docs").innerHTML = '<p class="empty">工種を選ぶと資料が表示されます。</p>';
+    $("#sum").hidden = true; $("#go").disabled = true; return;
+  }
+  $("#docs").innerHTML = list.map(d => `
+    <label class="doc">
+      <input type="checkbox" data-id="${d.id}" ${unchecked.has(d.id) ? "" : "checked"}>
+      <div>
+        <div class="t">${esc(d.title)}${d.status !== "ok" ? '<span class="badge">元ページ確認中</span>' : ""}</div>
+        <div class="m">${esc(d.org)}/${d.pages}ページ/取得日 ${esc(d.fetched_at)}/<a href="${esc(d.url)}" target="_blank" rel="noopener">出典</a></div>
+      </div>
+    </label>`).join("");
+  const c = chosen();
+  const pages = c.reduce((a,d) => a + d.pages, 0);
+  $("#sum").hidden = false;
+  $("#sum").innerHTML = `選択中:${c.length}資料・合計 <b>${pages}</b> ページ`;
+  $("#go").disabled = c.length === 0;
+}
+
+$("#cats").addEventListener("click", e => {
+  const b = e.target.closest(".cat"); if(!b) return;
+  const id = b.dataset.id;
+  selectedCats.has(id) ? selectedCats.delete(id) : selectedCats.add(id);
+  renderCats(); renderDocs(); clearDl();
+});
+$("#docs").addEventListener("change", e => {
+  const id = e.target.dataset.id; if(!id) return;
+  e.target.checked ? unchecked.delete(id) : unchecked.add(id);
+  renderDocs(); clearDl();
+});
+
+function clearDl(){
+  urls.splice(0).forEach(u => URL.revokeObjectURL(u));
+  $("#dl").style.display = "none"; $("#dl").innerHTML = ""; $("#status").textContent = "";
+}
+
+// ---- 表紙(出典一覧)をA4の画像として描く ----
+const A4W = 1240, A4H = 1754, MG = 90;   // 150dpi相当
+const FONT = '"Noto Sans JP","Yu Gothic",sans-serif';
+const C = {ink:"#17345F", teal:"#007884", cyan:"#10AFC2", sub:"#7F8FA6", pale:"#EAF8FA", border:"#CAD9DE"};
+
+function wrapText(ctx, text, maxW){
+  const lines = []; let line = "";
+  for(const ch of String(text)){
+    // 閉じカッコ・句読点は行頭に来ないよう、前の行にぶら下げる
+    if(line && ctx.measureText(line + ch).width > maxW && !"）)」』、。・ー〜！？".includes(ch)){ lines.push(line); line = ch; }
+    else line += ch;
+  }
+  if(line) lines.push(line);
+  return lines.length ? lines : [""];
+}
+
+// nCover=表紙の枚数(掲載ページの計算に使う)。描いた結果の canvas 配列を返す
+function drawCover(docs, info, nCover){
+  const canvases = []; let ctx, y;
+  const bottom = A4H - MG;
+  const newPage = () => {
+    const cv = document.createElement("canvas"); cv.width = A4W; cv.height = A4H;
+    ctx = cv.getContext("2d"); ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, A4W, A4H);
+    ctx.fillStyle = C.cyan; ctx.fillRect(0, 0, A4W, 14);
+    ctx.textBaseline = "top"; canvases.push(cv); y = MG;
+  };
+  const put = (s, x, yy, font, color) => { ctx.font = font; ctx.fillStyle = color; ctx.fillText(s, x, yy); };
+  const heading = s => {
+    ctx.fillStyle = C.cyan; ctx.fillRect(MG, y + 4, 8, 34);
+    put(s, MG + 22, y, `700 30px ${FONT}`, C.ink); y += 58;
+  };
+  const cols = {no:MG, main:MG + 70, page:MG + 800, date:MG + 930, end:A4W - MG};
+  const tableHead = () => {
+    ctx.fillStyle = C.ink; ctx.fillRect(MG, y, cols.end - MG, 48);
+    const f = `700 20px ${FONT}`;
+    put("No.", cols.no + 14, y + 12, f, "#fff"); put("資料名・発行機関・出典", cols.main + 10, y + 12, f, "#fff");
+    put("掲載ページ", cols.page + 6, y + 12, f, "#fff"); put("取得日", cols.date + 10, y + 12, f, "#fff");
+    y += 48;
+  };
+
+  newPage();
+  // タイトル
+  put("安全教育資料", MG, y, `700 64px ${FONT}`, C.ink); y += 92;
+  put(info.catNames, MG, y, `500 30px ${FONT}`, C.teal); y += 56;
+  ctx.fillStyle = C.cyan; ctx.fillRect(MG, y, A4W - MG * 2, 3); y += 36;
+
+  // 基本情報
+  const total = nCover + docs.reduce((a,d) => a + d.pages, 0);
+  const rows = [
+    ["教育月", info.month], ["工事名", info.koji], ["会社名", info.company],
+    ["対象工種・作業", info.work], ["作業固有の災害種別", info.hazards],
+    ["総ページ数", `${total}ページ(表紙${nCover}ページを含む)`], ["作成日", info.today],
+  ];
+  const labelW = 270, valX = MG + labelW + 20, valW = A4W - MG - valX - 10;
+  for(const [k, v] of rows){
+    ctx.font = `400 24px ${FONT}`;
+    const lines = wrapText(ctx, v || "", valW);
+    const h = Math.max(1, lines.length) * 36 + 22;
+    ctx.fillStyle = C.pale; ctx.fillRect(MG, y, labelW, h);
+    ctx.strokeStyle = C.border; ctx.lineWidth = 1; ctx.strokeRect(MG, y, A4W - MG * 2, h);
+    put(k, MG + 16, y + 13, `700 22px ${FONT}`, C.ink);
+    lines.forEach((l, i) => put(l, valX, y + 11 + i * 36, `400 24px ${FONT}`, C.ink));
+    y += h;
+  }
+  y += 50;
+
+  // 収録資料一覧
+  heading("収録資料一覧"); tableHead();
+  let start = nCover + 1;
+  docs.forEach((d, i) => {
+    const mainW = cols.page - cols.main - 20;
+    ctx.font = `700 22px ${FONT}`; const t = wrapText(ctx, d.title, mainW);
+    ctx.font = `400 19px ${FONT}`; const o = wrapText(ctx, d.org, mainW);
+    ctx.font = `400 16px ${FONT}`; const u = wrapText(ctx, d.url, mainW);
+    const h = t.length * 32 + o.length * 28 + u.length * 24 + 30;
+    if(y + h > bottom){ newPage(); heading("収録資料一覧(続き)"); tableHead(); }
+    ctx.strokeStyle = C.border; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(MG, y + h); ctx.lineTo(cols.end, y + h); ctx.stroke();
+    let yy = y + 14;
+    put(String(i + 1), cols.no + 22, yy, `700 22px ${FONT}`, C.teal);
+    t.forEach(l => { put(l, cols.main + 10, yy, `700 22px ${FONT}`, C.ink); yy += 32; });
+    o.forEach(l => { put(l, cols.main + 10, yy, `400 19px ${FONT}`, C.sub); yy += 28; });
+    u.forEach(l => { put(l, cols.main + 10, yy, `400 16px ${FONT}`, C.teal); yy += 24; });
+    const end = start + d.pages - 1;
+    put(d.pages > 1 ? `p.${start}〜${end}` : `p.${start}`, cols.page + 6, y + 14, `500 22px ${FONT}`, C.ink);
+    put(d.fetched_at, cols.date + 10, y + 16, `400 19px ${FONT}`, C.ink);
+    start = end + 1; y += h;
+  });
+
+  // 注記
+  const notes = [
+    "※作業固有の内容のみで構成しています。",
+    "※各資料は発行機関の利用規約に基づき、出典を明記のうえ収録しています。著作権は各発行機関に帰属します。",
+  ];
+  ctx.font = `400 18px ${FONT}`;
+  const noteLines = notes.flatMap(n => wrapText(ctx, n, A4W - MG * 2));
+  if(y + 30 + noteLines.length * 28 > bottom) newPage(); else y += 30;
+  noteLines.forEach(l => { put(l, MG, y, `400 18px ${FONT}`, C.sub); y += 28; });
+  return canvases;
+}
+
+async function buildPdf(docs, info){
+  await Promise.all([document.fonts.load(`400 20px ${FONT}`), document.fonts.load(`700 20px ${FONT}`)]);
+  // 1回目で表紙の枚数を数え、2回目でその枚数を前提に掲載ページを書く
+  const n = drawCover(docs, info, 1).length;
+  const covers = drawCover(docs, info, n);
+  const out = await PDFLib.PDFDocument.create();
+  for(const cv of covers){
+    const png = await new Promise(r => cv.toBlob(b => b.arrayBuffer().then(r), "image/png"));
+    const img = await out.embedPng(png);
+    out.addPage([595.28, 841.89]).drawImage(img, {x:0, y:0, width:595.28, height:841.89});
+  }
+  for(const d of docs){
+    const bytes = await (await fetch(`docs/${d.id}_img.pdf`)).arrayBuffer();
+    const src = await PDFLib.PDFDocument.load(bytes, {ignoreEncryption:true});
+    (await out.copyPages(src, src.getPageIndices())).forEach(p => out.addPage(p));
+  }
+  return {blob: new Blob([await out.save()], {type:"application/pdf"}), pages: out.getPageCount()};
+}
+
+function link(blob, name, label, desc){
+  const u = URL.createObjectURL(blob); urls.push(u);
+  const icon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>';
+  return `<a href="${u}" download="${esc(name)}"><b>${icon}${esc(label)}</b><small>${esc(desc)}</small></a>`;
+}
+
+$("#go").addEventListener("click", async () => {
+  const docs = chosen(); if(!docs.length) return;
+  clearDl(); $("#go").disabled = true;
+  const d = new Date();
+  const today = `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  const stamp = today.replace(/-/g,"");
+  const cats = DATA.categories.filter(c => selectedCats.has(c.id));
+  const catName = cats.map(c => c.name).join("_");
+  const m = $("#month").value;
+  const info = {
+    catNames: cats.map(c => c.name).join("/"),
+    month: m ? `${m.slice(0,4)}年${Number(m.slice(5))}月` : "",
+    koji: $("#koji").value, company: $("#company").value,
+    work: cats.map(c => c.work).join("/"),
+    hazards: [...new Set(cats.flatMap(c => c.hazards))].join("/"),
+    today: `${d.getFullYear()}年${d.getMonth()+1}月${d.getDate()}日`,
+  };
+  try{
+    $("#status").textContent = "表紙と資料をまとめています…";
+    const {blob, pages} = await buildPdf(docs, info);
+    $("#dl").innerHTML = link(blob, `安全教育資料_${catName}_${stamp}.pdf`,
+      "PDFをダウンロード", "表紙(収録資料一覧)+収録資料。どの端末でも同じように表示されます");
+    $("#dl").style.display = "block";
+    $("#status").textContent = `完成しました(${docs.length}資料・表紙込み${pages}ページ)。`;
+  }catch(err){
+    $("#status").textContent = "作成に失敗しました。時間をおいてもう一度お試しください。(" + err.message + ")";
+  }finally{
+    $("#go").disabled = false;
+  }
+});
+
+fetch("data.json").then(r => r.json()).then(data => {
+  DATA = data;
+  DATA.categories = DATA.categories.filter(c => DATA.docs.some(d => d.categories.includes(c.id)));
+  renderCats();
+  $("#note").textContent = `収録資料は定期的に元のページを確認し、改訂があれば最新版に差し替えています(最終確認日:${data.generated_at})。各資料の著作権は発行機関に帰属します。`;
+}).catch(() => {
+  $("#cats").innerHTML = '<p class="empty">資料一覧を読み込めませんでした。ページを再読み込みしてください。</p>';
+});
+</script>
+</body>
+</html>

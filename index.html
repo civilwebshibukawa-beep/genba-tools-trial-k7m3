@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>現場AIツールボックス</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17345F; --teal:#007884; --cyan:#10AFC2; --light:#33C1CF; --sub:#7F8FA6;
+  --pale:#EAF8FA; --border:#E5EEF1; --cool:#CAD9DE; --gold:#A97C43; --palegold:#F6EFE5;
+}
+*{box-sizing:border-box}
+body{margin:0;background:linear-gradient(180deg,var(--cyan) 0%,var(--teal) 100%) fixed;background-color:var(--teal);color:var(--ink);font-family:"Noto Sans JP","Yu Gothic",sans-serif;line-height:1.7;font-size:15px;min-height:100vh}
+
+header{background:#fff;border-top:5px solid var(--cyan);padding:18px 16px 22px}
+header .in{max-width:960px;margin:0 auto;position:relative}
+header .logo{display:block;height:30px;width:auto;margin-bottom:16px}
+header .catch{display:inline-block;margin:0 0 4px;color:var(--teal);font-weight:700;font-size:14px;letter-spacing:.06em}
+header h1{margin:0;font-size:30px;letter-spacing:.05em;line-height:1.4}
+header p{margin:4px 0 0;font-size:13px;color:var(--sub)}
+.bg{position:absolute;right:0;bottom:-22px;width:min(460px,44vw);pointer-events:none;opacity:.32}
+.bg img{width:100%;height:auto;display:block}
+
+main{max-width:960px;margin:0 auto;padding:28px 16px 64px}
+.lead{color:#fff;font-weight:700;font-size:17px;margin:0 0 14px;letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+
+.app{position:relative;display:flex;flex-direction:column;background:#fff;border-radius:12px;padding:22px 20px 18px;color:inherit;text-decoration:none;box-shadow:0 6px 20px rgba(0,60,70,.18);border:2px solid transparent;transition:transform .12s,box-shadow .12s,border-color .12s}
+a.app:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,60,70,.26);border-color:var(--cyan)}
+.app .icon{width:54px;height:54px;border-radius:14px;background:var(--pale);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.app .icon svg{width:30px;height:30px}
+.app h2{margin:0 0 6px;font-size:18px;letter-spacing:.03em}
+.app .desc{margin:0 0 14px;font-size:13.5px;color:#4A5D78;flex:1}
+.app .io{font-size:12px;color:var(--sub);border-top:1px solid var(--border);padding-top:10px;margin-bottom:14px}
+.app .io b{color:var(--teal);font-weight:500}
+.status{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;padding:2px 10px;border-radius:999px}
+.status.ok{background:var(--teal);color:#fff}
+.status.soon{background:var(--palegold);color:var(--gold)}
+.go{display:block;text-align:center;font-weight:700;font-size:14px;padding:10px;border-radius:8px;background:var(--teal);color:#fff}
+.go.off{background:var(--border);color:var(--sub)}
+.app.soon .go{background:var(--pale);color:var(--teal)}
+.app.soon .icon{background:#F1F5F7;color:var(--sub)}
+
+.note{font-size:12px;color:rgba(255,255,255,.88);margin-top:28px}
+@media (max-width:640px){.bg{display:none}}
+@media (max-width:480px){header h1{font-size:24px}header .logo{height:24px}}
+</style>
+</head>
+<body>
+<header><div class="in">
+  <div class="bg" aria-hidden="true"><img src="assets/silhouette.png" alt=""></div>
+  <img class="logo" src="assets/logo.png" alt="Civilweb">
+  <span class="catch">＼ 建設業協会会員アプリ ／</span>
+  <h1>現場AIツールボックス</h1>
+  <p>選ぶだけ・入れるだけで、現場の書類が仕上がるツール集です</p>
+</div></header>
+
+<main>
+  <p class="lead">使いたいツールを選んでください</p>
+  <div class="grid">
+
+    <a class="app" href="anzen-shiryo/">
+      <span class="status ok">利用できます</span>
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6M9 9h2"/></svg></div>
+      <h2>安全教育資料メーカー</h2>
+      <p class="desc">工種を選ぶだけで、厚生労働省・労働局・国土交通省などの公的な安全資料を集め、表紙付きの1冊のPDFにまとめます。</p>
+      <div class="io"><b>入力</b> 工種(13種類から選択)・教育月・工事名<br><b>出力</b> 表紙(収録資料一覧)付きPDF</div>
+      <span class="go">ツールを開く</span>
+    </a>
+
+    <a class="app soon" href="speech/">
+      <span class="status soon">画面イメージ</span>
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg></div>
+      <h2>安全スピーチ原稿</h2>
+      <p class="desc">テーマ・季節・話す時間を選ぶと、ヒヤリハット事例を盛り込んだ月例安全大会のスピーチ原稿を作成します。</p>
+      <div class="io"><b>入力</b> テーマ・季節・時間・話す人・聞く人<br><b>出力</b> そのまま読めるスピーチ原稿</div>
+      <span class="go off">画面イメージを見る</span>
+    </a>
+
+    <a class="app soon" href="kinrin/">
+      <span class="status soon">画面イメージ</span>
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 4l9 6.5"/><path d="M5 9.5V20h14V9.5"/><path d="M9 20v-6h6v6"/></svg></div>
+      <h2>近隣対応文書</h2>
+      <p class="desc">着工の挨拶状、通行止め・片側交互通行のチラシ、騒音・粉じんのお詫び文などを、項目を埋めるだけで作成します。</p>
+      <div class="io"><b>入力</b> 文書の種類・工事名・期間・内容<br><b>出力</b> 配布できる挨拶状・チラシ・お詫び文</div>
+      <span class="go off">画面イメージを見る</span>
+    </a>
+
+    <a class="app soon" href="ky/">
+      <span class="status soon">画面イメージ</span>
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15a8 8 0 0 1 16 0"/><path d="M2 15h20v2H2z"/><path d="M12 7V4M9 7.6 8 5M15 7.6 16 5"/></svg></div>
+      <h2>安全指示・KY</h2>
+      <p class="desc">作業内容を入れると、危険ポイントと安全指示、職長会のレジュメ、外国人作業員向けのわかりやすいフレーズを作成します。</p>
+      <div class="io"><b>入力</b> 作業内容・工程・現場の状況<br><b>出力</b> 安全指示事項・KYのポイント・レジュメ</div>
+      <span class="go off">画面イメージを見る</span>
+    </a>
+
+    <a class="app soon" href="soui/">
+      <span class="status soon">画面イメージ</span>
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></div>
+      <h2>創意工夫・加点資料</h2>
+      <p class="desc">工種と現場で工夫した内容を入れると、工事成績の加点につながる創意工夫・技術提案書のたたき台を作成します。</p>
+      <div class="io"><b>入力</b> 工種・工夫した内容・効果<br><b>出力</b> 創意工夫・技術提案書のたたき台</div>
+      <span class="go off">画面イメージを見る</span>
+    </a>
+
+  </div>
+  <p class="note">※「画面イメージ」のツールは、画面のたたきです(まだ動きません)。順次公開予定です。</p>
+</main>
+</body>
+</html>
